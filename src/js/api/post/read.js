@@ -1,5 +1,5 @@
 import { headers } from "../headers";
-import { API_SOCIAL_POSTS } from "../constants";
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants";
 
 /**
  * Fetches one single post from the API
@@ -79,20 +79,19 @@ export async function readPosts(limit = 12, page = 1) {
 export async function readPostsByUser(username, limit = 12, page = 1) {
   const queryParameters = `?limit=${limit}&page=${page}&_author=true&_reactions=true&_comments=true`;
   try {
-    const response = await fetch(API_SOCIAL_POSTS + queryParameters, {
-      method: "GET",
-      headers: headers(),
-    });
+    const response = await fetch(
+      API_SOCIAL_PROFILES + "/" + username + "/posts?" + queryParameters,
+      {
+        method: "GET",
+        headers: headers(),
+      }
+    );
 
     if (response.ok) {
       const data = await response.json();
 
       const userPosts = data.data;
-      const test = userPosts.filter((post) => {
-        return post.author.name === username;
-      });
-
-      return test;
+      return userPosts;
     }
   } catch (error) {
     alert("something went wrong trying to fetch user posts");
