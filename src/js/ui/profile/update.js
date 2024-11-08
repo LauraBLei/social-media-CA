@@ -23,7 +23,7 @@ export async function onUpdateProfile(event) {
 
   const banner = {
     url: formData.get("bannerUrl"),
-    alt: formData.get("bannerAlt"),
+    alt: "Cover image",
   };
 
   const updateData = {

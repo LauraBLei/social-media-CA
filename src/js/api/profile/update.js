@@ -31,10 +31,12 @@ export async function updateProfile(username, { avatar, banner, bio }) {
     if (response.ok) {
       alert("You updated your profile!");
       const data = await response.json();
-      localStorage.setItem("userInfo", json.stringify(data));
-      // window.location.reload
+      localStorage.setItem("userInfo", JSON.stringify(data.data));
+      window.location.reload();
     }
   } catch (error) {
+    console.log(error);
+
     alert("something went wrong trying to update your profile");
   }
 }
