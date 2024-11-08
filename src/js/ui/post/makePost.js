@@ -20,7 +20,7 @@ export const makeAPost = (post, id) => {
 
   const title = document.createElement("h2");
   title.innerText = post.title;
-  title.className = "text-center text-blue text-2xl font-semibold";
+  title.className = "text-center text-blue text-2xl font-semibold break-words";
 
   const text = document.createElement("p");
   text.innerText = post.body;
