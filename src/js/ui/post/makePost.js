@@ -27,7 +27,7 @@ export const makeAPost = (post, id) => {
   text.className = "text-blue font-semibold";
   const imageDiv = document.createElement("div");
   imageDiv.className =
-    "max-h-[200px] overflow-hidden w-auto flex items-center justify-center";
+    "max-h-[200px] overflow-hidden w-auto flex items-center justify-center break-words";
   if (post.media) {
     const image = document.createElement("img");
     image.src = post.media.url;
