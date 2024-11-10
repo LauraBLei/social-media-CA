@@ -3,7 +3,7 @@ import { onLogout } from "../auth/logout";
 export const makeHeader = (header) => {
   const outerContainer = document.createElement("div");
   outerContainer.className =
-    "flex justify-between sticky top-0 pt-10 pb-3 bg-gradient-to-b from-blue to-transparent bg-no-repeat";
+    "flex gap-8 md:justify-between sticky top-0 pt-10 pb-3 bg-gradient-to-b from-blue to-transparent bg-no-repeat flex-wrap justify-center";
 
   const logo = document.createElement("a");
   logo.href = "/";

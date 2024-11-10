@@ -14,7 +14,7 @@ export const makeAPost = (post, id) => {
 
   const container = document.createElement("div");
   container.className =
-    "flex flex-col gap-3 max-w-[750px] w-full rounded-md bg-lightGray mb-10 shadow-blue shadow-lg p-5 ";
+    "flex flex-col gap-3 max-w-[750px] w-full rounded-md bg-lightGray mb-10 shadow-blue shadow-lg p-5 break-words ";
   const countDiv = document.createElement("div");
   countDiv.className = "flex gap-10 justify-between items-center";
 
